@@ -1,2 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @use "tailwindcss";
+@plugin "daisyui" {
+  themes: pastel --default, dark --prefersdark, cupcake;
+}
+
+html, body {
+  height: 100%;
+}

@@ -1,0 +1,24 @@
+<div class="border border-red-500 h-full flex">
+  <nav class="flex flex-col p-2">
+    <a routerLink="/" class="px-3 py-1 hover:bg-gray-200 rounded-full">Inicio</a>
+    <a routerLink="/prestamos" class="p-2">Prestamos</a>
+  </nav>
+  <main class="flex-1">
+    <div class="card bg-base-100 w-96 shadow-sm">
+      <figure>
+        <img
+          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+          alt="Shoes" />
+      </figure>
+      <div class="card-body">
+        <h2 class="card-title">Card Title</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <button class="btn btn-success">Buy Now</button>
+        </div>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
