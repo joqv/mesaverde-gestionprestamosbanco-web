@@ -1,0 +1,40 @@
+<div class="flex justify-center px-10 py-7">
+  <div class="border border-green-500 bg-green-50 rounded-3xl px-10 py-8">
+    <h1 class="text-3xl font-bold mb-4">RESUMEN TRANSFERENCIA</h1>
+    <p class="text-center"><span class="text-3xl font-semibold">
+      {{ _cuentaService.transferencia()?.simboloMoneda }} {{ _cuentaService.transferencia()?.monto }}
+    </span></p>
+    <br>
+    <h1 class="text-sm font-semibold">Enviado a:</h1>
+    <p><span class="text-2xl font-semibold">{{ _cuentaService.transferencia()?.nombreCompletoDestino}}</span></p>
+    <p><span class="text-sm font-semibold">{{ _cuentaService.transferencia()?.numeroCuentaDestino }}</span></p>
+    <p><span class="text-sm font-semibold">{{ _cuentaService.transferencia()?.nombreMonedaDestino }}</span></p>
+    <br>
+
+    <h1 class="text-sm font-semibold">Desde:</h1>
+      <p><span class="text-2xl font-semibold">{{ _cuentaService.transferencia()?.nombreCompletoOrigen}}</span></p>
+      <p><span class="text-sm font-semibold">{{ _cuentaService.transferencia()?.numeroCuentaOrigen }}</span></p>
+      <p><span class="text-sm font-semibold">{{ _cuentaService.transferencia()?.nombreMonedaOrigen }}</span></p>
+    <br>
+
+    <h1 class="text-sm font-semibold">Descripción:</h1>
+    <p>{{ _cuentaService.transferencia()?.descripcion }}</p>
+    <br>
+    <h1 class="text-sm font-semibold">Número de Transacción:</h1>
+    <p>{{ _cuentaService.transferencia()?.numeroTransaccion}}</p>
+    <br>
+    <h1 class="text-sm font-semibold">Fecha:</h1>
+    <p>{{ _cuentaService.transferencia()?.fechaHora}}</p>
+    <br>
+    <div class="flex gap-4 justify-center">
+      <button type="button" (click)="onPortal()" class="btn btn-neutral">
+        Ir al Portal
+      </button>
+      <button type="button" (click)="onNuevaTransferencia()" class="btn btn-success">
+        Nueva Transferencia
+      </button>
+    </div>
+
+  </div>
+</div>
+

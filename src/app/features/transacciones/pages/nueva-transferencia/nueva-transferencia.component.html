@@ -1,0 +1,27 @@
+<div class="px-10 py-7">
+  <h1 class="text-3xl font-semibold mb-4">NUEVA TRANSFERENCIA INTERNA</h1>
+  <h2 class="mb-3 font-semibold">Ingrese una Cuenta Bancaria:</h2>
+  <form [formGroup]="nuevaTransferenciaForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>
+        <input formControlName="numeroCuentaDestino" id="cuentaDestino" type="text" class="input">
+        @if (nuevaTransferenciaForm.get('cuentaDestino')?.invalid && nuevaTransferenciaForm.get('cuentaDestino')?.touched) {
+          <div>
+            El numero de cuenta es obligatorio.
+          </div>
+        }
+      </label>
+    </div>
+    <br>
+    <div class="flex gap-4">
+      <button type="submit" [disabled]="nuevaTransferenciaForm.invalid" class="btn btn-success">
+        Continuar
+      </button>
+      <button type="button" (click)="onCancel()" class="btn btn-soft btn-error">
+        Salir
+      </button>
+    </div>
+  </form>
+</div>
+
+

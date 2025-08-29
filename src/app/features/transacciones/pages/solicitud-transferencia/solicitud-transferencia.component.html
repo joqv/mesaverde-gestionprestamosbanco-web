@@ -1,0 +1,58 @@
+<div class="px-10 py-7">
+  <h1 class="text-3xl font-semibold mb-4">TRANSFERENCIA INTERNA</h1>
+  <h2 class="mb-2 font-semibold">Enviar a:</h2>
+  <div class="border border-gray-200 bg-gray-100 px-4 py-3 rounded-xl">
+    <p><span class="font-semibold text-2xl">{{ _cuentaService.cuentaDestino()?.nombreCompleto }}</span></p>
+    <p><span class="font-semibold text-sm">N° Cuenta: {{ _cuentaService.cuentaDestino()?.numeroCuenta }}</span></p>
+    <p><span class="font-semibold text-sm">{{ _cuentaService.cuentaDestino()?.moneda }}</span></p>
+  </div>
+  <br>
+  <form [formGroup]="solicitudTransferenciaForm" (ngSubmit)="onSubmit()">
+    <div>
+      <h2 class="mb-3 font-semibold">Ingrese el monto:</h2>
+      <input formControlName="monto" id="monto" type="number" class="input">
+      @if (solicitudTransferenciaForm.get('monto')?.invalid && solicitudTransferenciaForm.get('monto')?.touched) {
+        <div class="text-red-500 text-sm">
+          El monto es obligatorio.
+        </div>
+      }
+    </div>
+    <br>
+    <div>
+      <h2 class="mb-3 font-semibold">Descripción:</h2>
+      <input formControlName="descripcion" id="descripcion" type="text" class="input">
+      @if (solicitudTransferenciaForm.get('descripcion')?.invalid && solicitudTransferenciaForm.get('descripcion')?.touched) {
+        <div class="text-red-500 text-sm">
+          Debe agregar una descripción.
+        </div>
+      }
+    </div>
+    <br>
+    <div>
+      <h2 class="mb-3 font-semibold">Desde:</h2>
+      <select formControlName="cuentaOrigen" id="cuentaOrigenId" class="select">
+        <option value="" disabled selected>Seleccionar cuenta...</option>
+        @for (c of cuentasBancariasCliente; track c.id) {
+          <option [value]="c.numeroCuenta">
+            {{ c.numeroCuenta }} - {{ c.simboloMoneda}} {{ c.saldo }}
+          </option>
+        }
+      </select>
+      @if (solicitudTransferenciaForm.get('cuentaOrigenId')?.invalid && solicitudTransferenciaForm.get('cuentaOrigenId')?.touched) {
+        <div class="text-red-500 text-sm">
+          Debe elegir una cuenta de origen.
+        </div>
+      }
+    </div>
+    <br>
+    <div class="flex gap-4">
+      <button type="submit" [disabled]="solicitudTransferenciaForm.invalid" class="btn btn-accent">Confirmar Transferencia</button>
+      <button type="button" (click)="onCancel()" class="btn btn-soft btn-error">
+        Cancelar
+      </button>
+    </div>
+  </form>
+
+</div>
+
+

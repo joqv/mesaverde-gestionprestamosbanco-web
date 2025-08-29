@@ -1,24 +1,18 @@
-<div class="border border-red-500 h-full flex">
-  <nav class="flex flex-col p-2">
-    <a routerLink="/" class="px-3 py-1 hover:bg-gray-200 rounded-full">Inicio</a>
-    <a routerLink="/prestamos" class="p-2">Prestamos</a>
-  </nav>
-  <main class="flex-1">
-    <div class="card bg-base-100 w-96 shadow-sm">
-      <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes" />
-      </figure>
-      <div class="card-body">
-        <h2 class="card-title">Card Title</h2>
-        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-        <div class="card-actions justify-end">
-          <button class="btn btn-success">Buy Now</button>
-        </div>
-      </div>
+<div class="h-screen flex flex-col">
+  <header class="px-5 py-3 flex gap-4 items-center">
+    <h1 class="text-2xl font-semibold">MesaVerde</h1>
+    <div class="relative top-1">
+      <svg width="30px" height="30px" viewBox="0 0 1024 1024" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M853.333333 874.666667H170.666667c-46.933333 0-85.333333-38.4-85.333334-85.333334V343.466667c0-27.733333 12.8-53.333333 36.266667-70.4L512 0l390.4 273.066667c23.466667 14.933333 36.266667 42.666667 36.266667 70.4V789.333333c0 46.933333-38.4 85.333333-85.333334 85.333334z" fill="#78909C" /><path d="M298.666667 21.333333h426.666666v661.333334H298.666667z" fill="#AED581" /><path d="M277.333333 0v704h469.333334V0H277.333333z m426.666667 661.333333H320V42.666667h384v618.666666z" fill="#558B2F" /><path d="M725.333333 64c0 36.266667-6.4 64-42.666666 64s-64-27.733333-64-64 27.733333-42.666667 64-42.666667 42.666667 6.4 42.666666 42.666667zM341.333333 21.333333c36.266667 0 64 6.4 64 42.666667s-27.733333 64-64 64-42.666667-27.733333-42.666666-64 6.4-42.666667 42.666666-42.666667z" fill="#558B2F" /><path d="M512 170.666667m-42.666667 0a42.666667 42.666667 0 1 0 85.333334 0 42.666667 42.666667 0 1 0-85.333334 0Z" fill="#558B2F" /><path d="M512 426.666667m-128 0a128 128 0 1 0 256 0 128 128 0 1 0-256 0Z" fill="#558B2F" /><path d="M853.333333 874.666667H170.666667c-46.933333 0-85.333333-38.4-85.333334-85.333334V362.666667l426.666667 277.333333 426.666667-277.333333v426.666666c0 46.933333-38.4 85.333333-85.333334 85.333334z" fill="#CFD8DC" /></svg>
     </div>
-    <router-outlet></router-outlet>
-  </main>
+  </header>
+  <div class="flex flex-row flex-1">
+    <nav class="flex flex-col px-5 py-3 gap-4 min-w-50">
+      <a routerLink="/" class="px-4 py-2 rounded-full btn" role="button">Portal</a>
+      <a routerLink="/prestamos" class="px-4 py-2 rounded-full btn" role="button">Prestamos</a>
+    </nav>
+    <main class="flex-1 bg-white rounded-3xl mx-3 my-3 shadow-lg">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
 </div>
 
