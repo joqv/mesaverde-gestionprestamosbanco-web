@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {RouterLink, RouterOutlet} from '@angular/router';
+import {CuentaService} from '../../../features/transacciones/services/cuenta.service';
 
 @Component({
   selector: 'app-portal-layout',
@@ -8,5 +9,5 @@ import {RouterLink, RouterOutlet} from '@angular/router';
   styleUrl: './portal-layout.scss'
 })
 export class PortalLayout {
-
+  cuentaService = inject(CuentaService);
 }
